@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Requiring the `Headline` and 'Note' models for accessing the collections
 var Headline = require("./models/Headline.js");
