@@ -4,17 +4,18 @@ module.exports = function(app) {
     res.render("home");
   });
   
-  app.get('/articles', function (req, res) {
-    console.log('/articles get request received')
-    var category_id= req.params.id;
-    db.Thread.findAll({
-      include : [db.User, db.Reply],
-      where: {
-        CategoryId: category_id
-      }
-    }).then(function (dbThread) {
-      res.render('forum', {threads: dbThread})
-      // res.render? for the profile page?
-    })
+  app.get('/headlines', function (req, res) {
+    console.log('/headlines get request received')
+    // var category_id= req.params.id;
+    // db.Thread.findAll({
+    //   include : [db.User, db.Reply],
+    //   where: {
+    //     CategoryId: category_id
+    //   }
+    // }).then(function (dbThread) {
+    //   res.render('forum', {threads: dbThread})
+    //   // res.render? for the profile page?
+    // })
+    res.render("headlines");
   })
 };
