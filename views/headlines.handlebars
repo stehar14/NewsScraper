@@ -13,7 +13,29 @@
 </nav>
 
 
+  <!-- Modal Trigger [TO BE PLACED ON EACH HEADLINE WITH REF ID] -->
+  <button class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</button>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Leave a Note</h4>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <textarea id="notefield" type="text" class="materialize-textarea validate"></textarea>
+              <label for="notefield">Leave a note</label>
+            </div>
+          </div>             
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
 
 
 
@@ -82,5 +104,6 @@
 <script>
   $(document).ready(function(){
     $('.parallax').parallax();
+    $('.modal-trigger').leanModal();
   });
 </script>

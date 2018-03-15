@@ -9,6 +9,7 @@ var HeadlineSchema = new Schema({
 // `title` and 'body' must be of type String
   title: String,
   body: String,
+  url: String,
   notes: [{
     type: Schema.Types.ObjectId,
     ref: "Headline"
