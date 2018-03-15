@@ -40,30 +40,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 
-app.get('/', function(req, res) {
-    console.log('/ get request received')
-    res.render("home");
-  })
-// Route to post our form submission to mongoDB via mongoose
-app.post("/submit", function(req, res) {
-  // Create a new user using req.body
-  console.log(req.body);
-  // Update this route to run the `setFullName` and `lastUpdatedDate` methods before creating a new User
-  // You must create these methods in the model.
-  var user = new User(req.body);
-  user.setFullName();
-  user.lastUpdatedDate();
-
-  User.create(user)
-    .then(function(dbUser) {
-      // If saved successfully, send the the new User document to the client
-      res.json(dbUser);
-    })
-    .catch(function(err) {
-      // If an error occurs, send the error to the client
-      res.json(err);
-    });
-});
+require("./routes/index.js")(app);
 
 // Start the server
 app.listen(PORT, function() {
