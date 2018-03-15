@@ -40,8 +40,8 @@ app.set("view engine", "handlebars");
 
 // Routes
 
-require("./routes/index.js")(app);
-
+var routes = require("./routes/index.js");
+app.use(routes);
 // Start the server
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
