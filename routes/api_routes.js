@@ -1,9 +1,5 @@
 var scrape = require("../scripts/scrape.js");
 module.exports = function(app) {
-// Route to post our form submission to mongoDB via mongoose
-    app.get("/scrape", function(req, res) {
-        scrape();
-    })
 
     app.post("/scrape", function(req, res) {
         // Create a new user using req.body

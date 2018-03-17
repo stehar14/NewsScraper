@@ -21,15 +21,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 
-// // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-// var MONGODB_URI = "mongodb://user:user@ds113749.mlab.com:13749/news_scraper";
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = "mongodb://user:user@ds113749.mlab.com:13749/news_scraper";
 
-// // Set mongoose to leverage built in JavaScript ES6 Promises
-// // Connect to the Mongo DB
-// mongoose.Promise = Promise;
-// mongoose.connect(MONGODB_URI);
-// var db = mongoose.connection;
-// db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");

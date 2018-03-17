@@ -1,4 +1,8 @@
+var scrape = require("../scripts/scrape.js");
+
+
 module.exports = function(app) {
+  
   app.get('/', function(req, res) {
     console.log('/ get request received')
     res.render("home");
@@ -17,5 +21,10 @@ module.exports = function(app) {
     //   // res.render? for the profile page?
     // })
     res.render("headlines");
-  })
+  });
+
+  app.get("/scrape", function(req, res) {
+    scrape();
+    res.send("Scrape is finished!");
+  });
 };
