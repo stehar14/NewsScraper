@@ -15,11 +15,14 @@ var HeadlineSchema = new Schema({
   body: {
     type: String,
   },
-  // url: {
-  //   type: String,
-  //   // required: true,
-  //   unique: true
-  // },
+  url: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  image: {
+    type: String,
+  },
   notes: [{
     type: Schema.Types.ObjectId,
     ref: "note"

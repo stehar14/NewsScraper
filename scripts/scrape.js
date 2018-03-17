@@ -8,13 +8,19 @@ module.exports = function() {
     const $ = cheerio.load(html);
     $("article").each(function(i, element) {
       let results = {};
-      let title = $(element).children().children(".title").text().trim();
-      let body = $(element).children().children().remove().end().text().trim();
+      results.title = $(element).children().children(".title").text().trim();
+      results.url = $(element).children().children(".title").children("a").attr("href");
+      if ($(element).find("img").attr("src") != null) {
+        results.image = $(element).find("img").attr("src");
+      } else {
+        results.image = "assets/images/placeholder.png";
+      }
+      results.body = $(element).children().children().remove().end().text().trim();        
+        console.log("URL" + results.url);
+      
       // let url = $(element).find("a").attr("href");
       // console.log(url);
       // console.log(title + "\n" + content);
-      results.title = title;
-      results.body = body;
       // results.url = url;
       var headline = new db.Headline(results);
       headline.save(function(err, headline) {

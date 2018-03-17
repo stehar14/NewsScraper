@@ -14,7 +14,8 @@ module.exports = function(app) {
     db.Headline.find({})
       .then(function (dbHeadline) {
           // If we were able to successfully find Funnys, send them back to the client
-        res.render("headlines", dbHeadline);
+        res.render("headlines", {headlines: dbHeadline});
+        console.log({headlines: dbHeadline})
       })
   });
 
