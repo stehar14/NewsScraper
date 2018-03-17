@@ -11,7 +11,7 @@ module.exports = function() {
       results.title = $(element).children().children(".title").text().trim();
       results.url = $(element).children().children(".title").children("a").attr("href");
       if ($(element).find("img").attr("src") != null) {
-        results.image = $(element).find("img").attr("data-proxy-image");
+        results.image = $(element).find("img").attr("src");
       } else {
         results.image = "assets/images/placeholder.png";
       }
