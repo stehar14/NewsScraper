@@ -40,7 +40,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 
-require("./routes/index.js")(app);
+require("./routes/html_routes.js")(app);
 
 // Start the server
 app.listen(PORT, function() {
