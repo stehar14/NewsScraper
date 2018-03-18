@@ -1,6 +1,6 @@
 <nav class="white" role="navigation">
   <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo pacifico">Scrape That Beach</a>
+    <a id="logo-container" href="/" class="brand-logo pacifico">Scrape That Beach</a>
     <ul class="right hide-on-med-and-down">
       <li><a class="pacifico" href="http://www.myrtlebeachonline.com/latest-news/">Myrtle Beach Online</a></li>
     </ul>
@@ -12,9 +12,6 @@
   </div>
 </nav>
 
-
-  <!-- Modal Trigger [TO BE PLACED ON EACH HEADLINE WITH REF ID] -->
-  <button class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</button>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
@@ -78,6 +75,8 @@
             </div>
             <span class="card-title grey-text text-darken-4">{{title}}<i class="material-icons right">close</i></span>
             <p>{{body}}</p>
+            <!-- Modal Trigger [TO BE PLACED ON EACH HEADLINE WITH REF ID] -->
+            <button headline-id={{_id}} class="waves-effect waves-light btn modal-trigger" data-target="modal1">Add a note</button>
           </div>
         </div>
         {{/each}}
@@ -132,6 +131,6 @@
 <script>
   $(document).ready(function(){
     $('.parallax').parallax();
-    $('.modal-trigger').leanModal();
+    $('.modal-trigger').modal();
   });
 </script>

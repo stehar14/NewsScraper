@@ -23,6 +23,10 @@ var HeadlineSchema = new Schema({
   image: {
     type: String,
   },
+  created: { 
+    type: Date, 
+    default: Date.now 
+  },
   notes: [{
     type: Schema.Types.ObjectId,
     ref: "note"

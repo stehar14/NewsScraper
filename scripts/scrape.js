@@ -10,8 +10,9 @@ module.exports = function() {
       let results = {};
       results.title = $(element).children().children(".title").text().trim();
       results.url = $(element).children().children(".title").children("a").attr("href");
-      if ($(element).find("img").attr("src") != null) {
-        results.image = $(element).find("img").attr("src");
+      if ($(element).find("img").attr("data-proxy-image") != null) {
+        console.log($(element).find("img").attr());
+        results.image = $(element).find("img").attr("data-proxy-image").replace("_80", "_320");
       } else {
         results.image = "assets/images/placeholder.png";
       }

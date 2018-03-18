@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.get('/headlines', function (req, res) {
     console.log('/headlines get request received')
     // Grab every document in the Funnys collection
-    db.Headline.find({})
+    db.Headline.find({}).sort({created: -1})
       .then(function (dbHeadline) {
           // If we were able to successfully find Funnys, send them back to the client
         res.render("headlines", {headlines: dbHeadline});
