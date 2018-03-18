@@ -14,7 +14,7 @@ module.exports = function() {
         console.log($(element).find("img").attr());
         results.image = $(element).find("img").attr("data-proxy-image").replace("_80", "_320");
       } else {
-        results.image = "/assets/images/placeholder.png";
+        results.image = "/assets/images/placeholder.PNG";
       }
       results.body = $(element).children().children().remove().end().text().trim();        
         console.log("URL" + results.url);
