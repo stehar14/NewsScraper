@@ -20,6 +20,12 @@
 
       <div class="row">
         <form class="col s12">
+          <div class="row">
+            {{#each headlines}}
+            <div class="old-notes">
+              
+            </div>
+          </div>
           <div class="row modal-form-row">
             <div class="input-field col s12">
               <textarea id="notefield" type="text" class="materialize-textarea validate"></textarea>
@@ -131,6 +137,9 @@
 <script>
   $(document).ready(function(){
     $('.parallax').parallax();
+    $('.modal').modal();
     $('.modal-trigger').modal();
   });
+
+  
 </script>
